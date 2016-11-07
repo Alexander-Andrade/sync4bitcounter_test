@@ -8,7 +8,7 @@ end full_scheme_test;
 architecture Behavioral of full_scheme_test is
     component full_scheme is
         Port (not_oe, ent, enp, not_sclr, not_sload, clk, not_aclr, not_aload, a, b, c, d : in std_logic;
-              cco, rco, q_a, q_b, q_c, q_d : out std_logic; iw_y : out std_logic_vector(27 downto 0));
+              cco, rco, q_a, q_b, q_c, q_d : out std_logic);
     end component;
     
     signal not_oe, ent, enp, not_sclr, not_sload, clk, not_aclr, not_aload, a, b, c, d: std_logic := '0';
@@ -19,7 +19,7 @@ architecture Behavioral of full_scheme_test is
     constant clk_period : time := 5 ns;
     constant clk_x2 : time := 10 ns;
 begin
-   uut : full_scheme port map(not_oe, ent, enp, not_sclr, not_sload, clk, not_aclr, not_aload, a, b, c, d, cco, rco, q_a, q_b, q_c, q_d, iw_y);
+   uut : full_scheme port map(not_oe, ent, enp, not_sclr, not_sload, clk, not_aclr, not_aload, a, b, c, d, cco, rco, q_a, q_b, q_c, q_d);
    process
    begin
        clk <= '0';

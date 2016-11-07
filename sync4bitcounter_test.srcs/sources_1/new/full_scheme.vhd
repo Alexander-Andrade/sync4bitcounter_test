@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity full_scheme is
     Port (not_oe, ent, enp, not_sclr, not_sload, clk, not_aclr, not_aload, a, b, c, d : in std_logic;
-          cco, rco, q_a, q_b, q_c, q_d : out std_logic; iw_y : out std_logic_vector(27 downto 0));
+          cco, rco, q_a, q_b, q_c, q_d : out std_logic);
 end full_scheme;
 
 architecture Behavioral of full_scheme is
@@ -56,12 +56,8 @@ architecture Behavioral of full_scheme is
     signal iw : std_logic_vector(27 downto 0) := (others=> '0');
     signal j_inv : std_logic_vector(4 downto 1) := (others=>'0');
 begin
-    iw_y <= iw;
     iw(0) <= not not_oe;
     scheme_6_1 : scheme_6 port map(x0=>ent,x1=>enp,x2=>not_sclr,x3=>not_sload,y0=>iw(1),y1=>iw(2),y2=>iw(3));
-    --iw(1)<='1';
-    --iw(2)<='1';
-    --iw(3)<='0';
     
     iw(4) <= not clk;
     iw(5) <= not not_aclr;
