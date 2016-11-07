@@ -1,0 +1,5 @@
+/sync4bitcounter_test.xpr
+sync4bitcounter_test.cache/
+sync4bitcounter_test.sim/
+sync4bitcounter_test.hw/
+/vivado*
