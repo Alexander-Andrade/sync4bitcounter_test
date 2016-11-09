@@ -67,17 +67,16 @@ begin
     begin
         file_open(fetalon, "../../../etalon.txt", write_mode);
         
+        --counting
+        not_oe<='0';
+        ent<='1';
+        enp<='1';
+        not_sclr<='1';
+        not_sload<='1';
+        not_aclr<='1';
+        not_aload<='1';
+        wait for 5 ns;
         state_2file(fetalon);
-        
---        --counting
---        not_oe<='0';
---        ent<='1';
---        enp<='1';
---        not_sclr<='1';
---        not_sload<='1';
---        not_aclr<='1';
---        not_aload<='1';
---        wait for 93 ns;
 --        --async clear
 --        not_oe<='0';
 --        not_aclr<='0';

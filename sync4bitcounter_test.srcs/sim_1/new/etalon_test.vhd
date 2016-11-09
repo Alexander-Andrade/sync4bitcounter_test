@@ -27,6 +27,8 @@ architecture Behavioral of etalon_test is
     
     
 begin
+
+
     process
     procedure state_fromfile(file fname : text) is
               variable l: line;
