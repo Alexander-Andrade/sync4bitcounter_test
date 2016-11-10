@@ -92,7 +92,7 @@ begin
     begin
         file_open(fetalon, "../../../etalon.txt", read_mode);
         
-        for i in 0 to 15 loop
+        while not endfile(fetalon) loop
             state_fromfile(fetalon);
             wait for 5 ns;
             assertion;
