@@ -35,7 +35,7 @@ architecture Behavioral of etalon_tofile is
         write(l, enp);
         write(l, not_sclr);
         write(l, not_sload);
-        write(l, clk);
+        --write(l, clk);
         write(l, not_aclr);
         write(l, not_aload);
         write(l, a);
@@ -75,8 +75,10 @@ begin
         not_sload<='1';
         not_aclr<='1';
         not_aload<='1';
+        for i in 0 to 15 loop 
         wait for 5 ns;
         state_2file(fetalon);
+        end loop;
 --        --async clear
 --        not_oe<='0';
 --        not_aclr<='0';

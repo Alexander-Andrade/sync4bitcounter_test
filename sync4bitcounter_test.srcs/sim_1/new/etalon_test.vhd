@@ -25,78 +25,78 @@ architecture Behavioral of etalon_test is
     constant clk_period : time := 5 ns;
     constant clk_x2 : time := 10 ns;
     
-    
 begin
 
-
+    uut : full_scheme port map(not_oe, ent, enp, not_sclr, not_sload, clk, not_aclr, not_aload, a, b, c, d, cco, rco, q_a, q_b, q_c, q_d);
+    
     process
+    begin
+           clk <= '0';
+           wait for clk_period;
+           clk <= '1';
+           wait for clk_period;
+    end process;
+    
+    
+    process
+    variable cco_etal, rco_etal, q_a_etal, q_b_etal, q_c_etal, q_d_etal : std_logic := '0'; 
+    
     procedure state_fromfile(file fname : text) is
               variable l: line;
-              variable temp : std_logic := '0';
+              variable temp_vec : std_logic_vector(10 downto 0) := (others=>'0');
             begin
                 --in row
                 readline(fname, l); 
+                read(l, temp_vec);
                 
-                read(l, temp);
-                not_oe <= temp;
-                
-                read(l, temp);
-                ent <= temp;
-    
-                read(l, temp);
-                enp <= temp;            
-                
-                read(l, temp);
-                not_sclr <= temp; 
-                
-                read(l, temp);
-                not_sload <= temp;
-                
-                read(l, temp);
-                clk <= temp;
-                
-                read(l, temp);
-                not_aclr <= temp;
-                
-                read(l, temp);
-                not_aload <= temp;
-                
-                read(l, temp);
-                a <= temp;  
-                
-                read(l, temp);
-                b <= temp;          
-                
-                read(l, temp);
-                c <= temp;
-                
-                read(l, temp);
-                d <= temp;
-         --cco, rco, q_a, q_b, q_c, q_d       
+                not_oe <= temp_vec(10);
+                ent    <= temp_vec(9);
+                enp    <= temp_vec(8);            
+                not_sclr <= temp_vec(7);
+                not_sload <= temp_vec(6);
+                --clk <= temp_vec(5);
+                not_aclr <= temp_vec(5);
+                not_aload <= temp_vec(4);
+                a <= temp_vec(3);  
+                b <= temp_vec(2);          
+                c <= temp_vec(1);
+                d <= temp_vec(0);
+       
                 --out row
                 readline(fname, l); 
                 
-                read(l, temp);
-                cco <= temp;
-                
-                read(l, temp);
-                rco <= temp;
-    
-                read(l, temp);
-                q_a <= temp; 
-                
-                read(l, temp);
-                q_b <= temp;
-    
-                read(l, temp);
-                q_c <= temp;
-               
-                read(l, temp);
-                q_d <= temp;           
+                read(l, cco_etal);
+                read(l, rco_etal);
+                read(l, q_a_etal);
+                read(l, q_b_etal);
+                read(l, q_c_etal);
+                read(l, q_d_etal);         
             end procedure;
+            
+      procedure assertion is
+            
+      begin
+                assert cco_etal = cco 
+                report "cco fails" severity error;
+                assert rco_etal = rco
+                report "rco fails" severity error; 
+                assert q_a_etal = q_a
+                report "q_a fails" severity error;
+                assert q_b_etal = q_b
+                report "q_b fails" severity error;
+                assert q_c_etal = q_c
+                report "q_c fails" severity error;
+                assert q_d_etal = q_d
+                report "q_d fails" severity error;
+      end procedure;
     begin
         file_open(fetalon, "../../../etalon.txt", read_mode);
-        state_fromfile(fetalon);
+        
+        for i in 0 to 15 loop
+            state_fromfile(fetalon);
+            wait for 5 ns;
+            assertion;
+        end loop;
         
         file_close(fetalon);
         wait;
