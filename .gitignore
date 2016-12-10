@@ -2,4 +2,5 @@
 sync4bitcounter_test.cache/
 sync4bitcounter_test.sim/
 sync4bitcounter_test.hw/
+sync4bitcounter_test.runs/
 /vivado*

@@ -32,26 +32,57 @@ entity JK_trigger is
 end JK_trigger;
 
 architecture Behavioral of JK_trigger is
-    signal q_temp : std_logic := '0';
+    signal q_temp : std_logic;
+--    attribute keep : string;
+--    attribute keep of q_temp : signal is "true";
 begin
-    q<= q_temp;
-    not_q <= not q_temp;
     process(clk, not_s , not_r) 
     begin
-        if not_s='0' and not_r='0' then
+        if (not_s='0') and (not_r='0') then
             q_temp <= 'X';
-        elsif not_s='0' and not_r='1' then
+        elsif (not_s='0') and (not_r='1') then
             q_temp <= '1';
-        elsif not_s='1' and not_r='0' then
+        elsif (not_s='1') and (not_r='0') then
             q_temp <= '0';
-        elsif clk'event and clk='1' and not_s='1' and not_r='1' then 
-            if j='0' and k='1' then
+        elsif clk'event and clk='1' then 
+            if (j='0') and (k='1') then
                 q_temp <='0';
-            elsif j='1' and k='0' then
+            elsif (j='1') and (k='0') then
                 q_temp <='1';
-            elsif j='1' and k='1' then
+            elsif (j='1') and (k='1') then
                 q_temp <= not q_temp;
             end if;
         end if;
     end process;
+    
+    q<= q_temp;
+    not_q <= not q_temp;
+    
 end Behavioral;
+
+
+--architecture Behavioral of JK_trigger is
+--begin
+--    process(clk, not_s , not_r)
+--    variable result : std_logic := '0';
+--    begin
+--        if not_r = '0' then
+--            result := '0';
+--        elsif not_s = '0' then
+--            result := '1';
+--        elsif rising_edge(clk) then
+--            if j = '1' and k = '1' then
+--                result := not result;
+--            elsif j = '1' then
+--                result := '1';
+--            elsif k = '1' then
+--                result := '0';
+--            end if;
+--        end if;
+        
+--        q <= result;
+--        not_q <= not result;
+        
+--    end process;
+
+--end Behavioral;

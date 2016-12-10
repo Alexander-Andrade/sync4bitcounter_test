@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log full_scheme.vds -m64 -mode batch -messageDb vivado.pb -source full_scheme.tcl
+EAStep vivado -log artix701_firmware.vds -m64 -mode batch -messageDb vivado.pb -source artix701_firmware.tcl

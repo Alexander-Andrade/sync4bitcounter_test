@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log full_scheme.vds -m64 -mode batch -messageDb vivado.pb -source full_scheme.tcl
+    with args -log artix701_firmware.vds -m64 -mode batch -messageDb vivado.pb -source artix701_firmware.tcl
 
 
 ****** Vivado v2014.2 (64-bit)
@@ -8,83 +8,132 @@
   **** IP Build 924643 on Fri May 30 09:20:16 MDT 2014
     ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 
-source full_scheme.tcl
+source artix701_firmware.tcl
 # set_param gui.test TreeTableDev
+# set_param xicom.use_bs_reader 1
 # set_msg_config -id {HDL 9-1061} -limit 100000
 # set_msg_config -id {HDL 9-1654} -limit 100000
+# set_msg_config -id {Labtools 27-147} -limit 4294967295
 # create_project -in_memory -part xc7a200tfbg676-2
 # set_property target_language VHDL [current_project]
 # set_property board_part xilinx.com:ac701:part0:1.0 [current_project]
 # set_param project.compositeFile.enableAutoGeneration 0
 # set_property default_lib xil_defaultlib [current_project]
 # read_vhdl -library xil_defaultlib {
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd
-#   C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/imports/new/FreqDiv.vhd
+#   D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/artix701_firmware.vhd
 # }
+# read_xdc D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/constrs_1/new/constraints.xdc
+# set_property used_in_implementation false [get_files D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/constrs_1/new/constraints.xdc]
 # set_param synth.vivado.isSynthRun true
-# set_property webtalk.parent_dir C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.cache/wt [current_project]
-# set_property parent.project_dir C:/Users/Rufus/VivadoProjects/sync4bitcounter_test [current_project]
-# catch { write_hwdef -file full_scheme.hwdef }
+# set_property webtalk.parent_dir D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.cache/wt [current_project]
+# set_property parent.project_dir D:/VIVADO/sync4bitcounter_test [current_project]
+# catch { write_hwdef -file artix701_firmware.hwdef }
 INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
-# synth_design -top full_scheme -part xc7a200tfbg676-2
-Command: synth_design -top full_scheme -part xc7a200tfbg676-2
+# synth_design -top artix701_firmware -part xc7a200tfbg676-2
+Command: synth_design -top artix701_firmware -part xc7a200tfbg676-2
 
 Starting synthesis...
 
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 232.910 ; gain = 74.063
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 233.750 ; gain = 74.109
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'full_scheme' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:9]
-INFO: [Synth 8-3491] module 'scheme_6' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd:5' bound to instance 'scheme_6_1' of component 'scheme_6' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:60]
-INFO: [Synth 8-638] synthesizing module 'scheme_6' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'scheme_6' (1#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd:10]
-INFO: [Synth 8-3491] module 'scheme_1' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd:4' bound to instance 'scheme_1_1' of component 'scheme_1' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:66]
-INFO: [Synth 8-638] synthesizing module 'scheme_1' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'scheme_1' (2#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd:9]
-INFO: [Synth 8-3491] module 'scheme_2' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd:6' bound to instance 'scheme_2_1' of component 'scheme_2' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:67]
-INFO: [Synth 8-638] synthesizing module 'scheme_2' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'scheme_2' (3#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd:11]
-INFO: [Synth 8-3491] module 'scheme_3' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd:5' bound to instance 'scheme_3_1' of component 'scheme_3' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:68]
-INFO: [Synth 8-638] synthesizing module 'scheme_3' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'scheme_3' (4#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd:10]
-INFO: [Synth 8-3491] module 'scheme_4' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd:5' bound to instance 'scheme_4_1' of component 'scheme_4' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:69]
-INFO: [Synth 8-638] synthesizing module 'scheme_4' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'scheme_4' (5#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd:10]
-INFO: [Synth 8-3491] module 'scheme_7' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd:5' bound to instance 'scheme_7_1' of component 'scheme_7' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'scheme_7' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'scheme_7' (6#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd:10]
-INFO: [Synth 8-3491] module 'scheme_5' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_1' of component 'scheme_5' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:72]
-INFO: [Synth 8-638] synthesizing module 'scheme_5' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'scheme_5' (7#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:10]
-INFO: [Synth 8-3491] module 'scheme_5' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_2' of component 'scheme_5' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:73]
-INFO: [Synth 8-3491] module 'scheme_5' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_3' of component 'scheme_5' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:74]
-INFO: [Synth 8-3491] module 'scheme_5' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_4' of component 'scheme_5' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:75]
-INFO: [Synth 8-3491] module 'JK_trigger' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_1' of component 'JK_trigger' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:79]
-INFO: [Synth 8-638] synthesizing module 'JK_trigger' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:34]
-INFO: [Synth 8-256] done synthesizing module 'JK_trigger' (8#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:34]
-INFO: [Synth 8-3491] module 'JK_trigger' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_2' of component 'JK_trigger' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:81]
-INFO: [Synth 8-3491] module 'JK_trigger' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_3' of component 'JK_trigger' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:83]
-INFO: [Synth 8-3491] module 'JK_trigger' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_4' of component 'JK_trigger' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:85]
-INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_1' of component 'tri_state_buffer' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:87]
-INFO: [Synth 8-638] synthesizing module 'tri_state_buffer' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'tri_state_buffer' (9#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:9]
-INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_2' of component 'tri_state_buffer' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:88]
-INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_3' of component 'tri_state_buffer' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:89]
-INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_4' of component 'tri_state_buffer' [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:90]
-INFO: [Synth 8-256] done synthesizing module 'full_scheme' (10#1) [C:/Users/Rufus/VivadoProjects/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:9]
+INFO: [Synth 8-638] synthesizing module 'artix701_firmware' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/artix701_firmware.vhd:29]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: 0 - type: bool 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'ibufds0' to cell 'IBUFDS' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/artix701_firmware.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'FreqDiv' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/imports/new/FreqDiv.vhd:33]
+	Parameter DIVIDER bound to: 26 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TTrigger' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/imports/new/FreqDiv.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'TTrigger' (1#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/imports/new/FreqDiv.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'FreqDiv' (2#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/imports/new/FreqDiv.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'full_scheme' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:9]
+INFO: [Synth 8-3491] module 'scheme_6' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd:5' bound to instance 'scheme_6_1' of component 'scheme_6' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'scheme_6' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'scheme_6' (3#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_6.vhd:10]
+INFO: [Synth 8-3491] module 'scheme_1' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd:4' bound to instance 'scheme_1_1' of component 'scheme_1' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'scheme_1' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'scheme_1' (4#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_1.vhd:9]
+INFO: [Synth 8-3491] module 'scheme_2' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd:6' bound to instance 'scheme_2_1' of component 'scheme_2' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'scheme_2' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'scheme_2' (5#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_2.vhd:11]
+INFO: [Synth 8-3491] module 'scheme_3' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd:5' bound to instance 'scheme_3_1' of component 'scheme_3' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'scheme_3' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'scheme_3' (6#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_3.vhd:10]
+INFO: [Synth 8-3491] module 'scheme_4' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd:5' bound to instance 'scheme_4_1' of component 'scheme_4' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'scheme_4' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'scheme_4' (7#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_4.vhd:10]
+INFO: [Synth 8-3491] module 'scheme_7' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd:5' bound to instance 'scheme_7_1' of component 'scheme_7' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'scheme_7' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'scheme_7' (8#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_7.vhd:10]
+INFO: [Synth 8-3491] module 'scheme_5' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_1' of component 'scheme_5' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'scheme_5' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'scheme_5' (9#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:10]
+INFO: [Synth 8-3491] module 'scheme_5' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_2' of component 'scheme_5' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:73]
+INFO: [Synth 8-3491] module 'scheme_5' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_3' of component 'scheme_5' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:74]
+INFO: [Synth 8-3491] module 'scheme_5' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/scheme_5.vhd:5' bound to instance 'scheme_5_4' of component 'scheme_5' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:75]
+INFO: [Synth 8-3491] module 'JK_trigger' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_1' of component 'JK_trigger' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'JK_trigger' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'JK_trigger' (10#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:34]
+INFO: [Synth 8-3491] module 'JK_trigger' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_2' of component 'JK_trigger' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:81]
+INFO: [Synth 8-3491] module 'JK_trigger' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_3' of component 'JK_trigger' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:83]
+INFO: [Synth 8-3491] module 'JK_trigger' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/JK_trigger.vhd:29' bound to instance 'jk_trigger_4' of component 'JK_trigger' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:85]
+INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_1' of component 'tri_state_buffer' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'tri_state_buffer' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'tri_state_buffer' (11#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:9]
+INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_2' of component 'tri_state_buffer' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:88]
+INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_3' of component 'tri_state_buffer' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:89]
+INFO: [Synth 8-3491] module 'tri_state_buffer' declared at 'D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/tri_state_buffer.vhd:4' bound to instance 'tri_state_buffer_4' of component 'tri_state_buffer' [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'full_scheme' (12#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/full_scheme.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'artix701_firmware' (13#1) [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/sources_1/new/artix701_firmware.vhd:29]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 266.797 ; gain = 107.949
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 267.590 ; gain = 107.949
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Optimization
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/artix7/xc7a200t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/artix7/xc7a200t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.2/data/parts/xilinx/artix7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/artix7/xc7a200t/fbg676/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.2/data\./parts/xilinx/artix7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/ConfigModes.xml
+
+Processing XDC Constraints
+Parsing XDC File [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [D:/VIVADO/sync4bitcounter_test/sync4bitcounter_test.srcs/constrs_1/new/constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
 ---------------------------------------------------------------------------------
 Start RTL Optimization
 ---------------------------------------------------------------------------------
@@ -93,10 +142,16 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tfbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 266.797 ; gain = 107.949
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 516.902 ; gain = 357.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 266.797 ; gain = 107.949
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 516.902 ; gain = 357.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 516.902 ; gain = 357.262
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -104,13 +159,12 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 30    
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 24    
 ---------------------------------------------------------------------------------
@@ -120,7 +174,13 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module full_scheme 
+Module artix701_firmware 
+Detailed RTL Component Info : 
+Module TTrigger 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module FreqDiv 
 Detailed RTL Component Info : 
 Module scheme_6 
 Detailed RTL Component Info : 
@@ -144,64 +204,63 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 6     
 Module tri_state_buffer 
 Detailed RTL Component Info : 
+Module full_scheme 
+Detailed RTL Component Info : 
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
-Loading clock regions from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/artix7/xc7a200t/ClockRegion.xml
-Loading clock buffers from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/artix7/xc7a200t/ClockBuffers.xml
-Loading clock placement rules from C:/Xilinx/Vivado/2014.2/data/parts/xilinx/artix7/ClockPlacerRules.xml
-Loading package pin functions from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/PinFunctions.xml...
-Loading package from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/artix7/xc7a200t/fbg676/Package.xml
-Loading io standards from C:/Xilinx/Vivado/2014.2/data\./parts/xilinx/artix7/IOStandards.xml
-Loading device configuration modes from C:/Xilinx/Vivado/2014.2/data\parts/xilinx/artix7/ConfigModes.xml
 Part Resources:
 DSPs: 740 (col length:100)
 BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Workers Ready, Starting Parallel Section  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 441.363 ; gain = 282.516
+Workers Ready, Starting Parallel Section  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 516.902 ; gain = 357.262
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 441.363 ; gain = 282.516
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 516.902 ; gain = 357.262
 ---------------------------------------------------------------------------------
-Finished Parallel Reinfer  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 441.363 ; gain = 282.516
+Finished Parallel Reinfer  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 516.902 ; gain = 357.262
 ---------------------------------------------------------------------------------
 Start RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Finished RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (\jk_trigger_1/q_temp_reg ) is unused and will be removed from module full_scheme.
-WARNING: [Synth 8-3332] Sequential element (\jk_trigger_2/q_temp_reg ) is unused and will be removed from module full_scheme.
-WARNING: [Synth 8-3332] Sequential element (\jk_trigger_3/q_temp_reg ) is unused and will be removed from module full_scheme.
-WARNING: [Synth 8-3332] Sequential element (\jk_trigger_4/q_temp_reg ) is unused and will be removed from module full_scheme.
+WARNING: [Synth 8-3332] Sequential element (\counter1/jk_trigger_1/q_temp_reg ) is unused and will be removed from module artix701_firmware.
+WARNING: [Synth 8-3332] Sequential element (\counter1/jk_trigger_2/q_temp_reg ) is unused and will be removed from module artix701_firmware.
+WARNING: [Synth 8-3332] Sequential element (\counter1/jk_trigger_3/q_temp_reg ) is unused and will be removed from module artix701_firmware.
+WARNING: [Synth 8-3332] Sequential element (\counter1/jk_trigger_4/q_temp_reg ) is unused and will be removed from module artix701_firmware.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 538.309 ; gain = 378.668
 ---------------------------------------------------------------------------------
-Finished Parallel Area Opt  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
-Finished Parallel Section  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished Parallel Area Opt  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 538.309 ; gain = 378.668
+Finished Parallel Section  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 538.309 ; gain = 378.668
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 573.414 ; gain = 413.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 573.414 ; gain = 413.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 583.930 ; gain = 424.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -219,7 +278,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 583.930 ; gain = 424.289
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -232,13 +291,13 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 583.930 ; gain = 424.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 583.930 ; gain = 424.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RAM, DSP and Shift Register Reporting
@@ -257,39 +316,68 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |BUFG  |     1|
-|2     |LUT2  |     3|
-|3     |LUT3  |    12|
-|4     |LUT4  |     1|
-|5     |LUT5  |     1|
-|6     |LUT6  |     7|
-|7     |FDCE  |     4|
-|8     |FDPE  |     4|
-|9     |LDC   |     4|
-|10    |IBUF  |    12|
-|11    |OBUF  |     2|
-|12    |OBUFT |     4|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |LUT1   |    26|
+|3     |LUT3   |    12|
+|4     |LUT4   |     1|
+|5     |LUT5   |     1|
+|6     |LUT6   |     8|
+|7     |FDCE   |     4|
+|8     |FDPE   |     4|
+|9     |FDRE   |    26|
+|10    |LDC    |     4|
+|11    |IBUF   |     9|
+|12    |IBUFDS |     1|
+|13    |OBUF   |     7|
++------+-------+------+
 
 Report Instance Areas: 
-+------+---------------+-------------+------+
-|      |Instance       |Module       |Cells |
-+------+---------------+-------------+------+
-|1     |top            |             |    55|
-|2     |  jk_trigger_1 |JK_trigger   |    12|
-|3     |  jk_trigger_2 |JK_trigger_0 |    10|
-|4     |  jk_trigger_3 |JK_trigger_1 |     6|
-|5     |  jk_trigger_4 |JK_trigger_2 |     8|
-+------+---------------+-------------+------+
++------+---------------------------+--------------+------+
+|      |Instance                   |Module        |Cells |
++------+---------------------------+--------------+------+
+|1     |top                        |              |   104|
+|2     |  counter1                 |full_scheme   |    34|
+|3     |    jk_trigger_1           |JK_trigger    |    10|
+|4     |    jk_trigger_2           |JK_trigger_25 |     7|
+|5     |    jk_trigger_3           |JK_trigger_26 |     7|
+|6     |    jk_trigger_4           |JK_trigger_27 |    10|
+|7     |  fd                       |FreqDiv       |    52|
+|8     |    \triggers[0].trigger   |TTrigger      |     2|
+|9     |    \triggers[10].trigger  |TTrigger_0    |     2|
+|10    |    \triggers[11].trigger  |TTrigger_1    |     2|
+|11    |    \triggers[12].trigger  |TTrigger_2    |     2|
+|12    |    \triggers[13].trigger  |TTrigger_3    |     2|
+|13    |    \triggers[14].trigger  |TTrigger_4    |     2|
+|14    |    \triggers[15].trigger  |TTrigger_5    |     2|
+|15    |    \triggers[16].trigger  |TTrigger_6    |     2|
+|16    |    \triggers[17].trigger  |TTrigger_7    |     2|
+|17    |    \triggers[18].trigger  |TTrigger_8    |     2|
+|18    |    \triggers[19].trigger  |TTrigger_9    |     2|
+|19    |    \triggers[1].trigger   |TTrigger_10   |     2|
+|20    |    \triggers[20].trigger  |TTrigger_11   |     2|
+|21    |    \triggers[21].trigger  |TTrigger_12   |     2|
+|22    |    \triggers[22].trigger  |TTrigger_13   |     2|
+|23    |    \triggers[23].trigger  |TTrigger_14   |     2|
+|24    |    \triggers[24].trigger  |TTrigger_15   |     2|
+|25    |    \triggers[25].trigger  |TTrigger_16   |     2|
+|26    |    \triggers[2].trigger   |TTrigger_17   |     2|
+|27    |    \triggers[3].trigger   |TTrigger_18   |     2|
+|28    |    \triggers[4].trigger   |TTrigger_19   |     2|
+|29    |    \triggers[5].trigger   |TTrigger_20   |     2|
+|30    |    \triggers[6].trigger   |TTrigger_21   |     2|
+|31    |    \triggers[7].trigger   |TTrigger_22   |     2|
+|32    |    \triggers[8].trigger   |TTrigger_23   |     2|
+|33    |    \triggers[9].trigger   |TTrigger_24   |     2|
++------+---------------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 583.930 ; gain = 424.289
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 461.246 ; gain = 302.398
-INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 583.930 ; gain = 424.289
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
@@ -299,10 +387,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-46 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+56 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 541.055 ; gain = 356.184
-# write_checkpoint full_scheme.dcp
-# report_utilization -file full_scheme_utilization_synth.rpt -pb full_scheme_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.178 . Memory (MB): peak = 541.055 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 09 23:17:02 2016...
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 586.336 ; gain = 400.699
+# write_checkpoint artix701_firmware.dcp
+# report_utilization -file artix701_firmware_utilization_synth.rpt -pb artix701_firmware_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 586.336 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 01 21:08:50 2016...
